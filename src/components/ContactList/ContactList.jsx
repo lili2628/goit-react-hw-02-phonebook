@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import css from './ContactList.module.css';
+import { List } from './ContactList.styled';
 
 
 function ContactList({ children }) {
-  return <ul className={css.list}>{children}</ul>;
+  return <List>{children}</List>;
 }
 
 export default ContactList;

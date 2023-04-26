@@ -1,23 +1,23 @@
 import PropTypes from 'prop-types';
-import css from './ContactItem.module.css';
+import { ListItem, InfoContainer, InfoItemContainer, Data, DeleteBtn } from './ContactItem.styled';
 
 function ContactItem({ contacts, onDeleteContact }) {
     return (
         <>
             {contacts.map(({ id, name, number }) => (
-                <li key={id} className={css.contact__item}>
-                    <div className={css.contact__info}>
-                        <div className={css.contact__div}>
-                            <p className={css.contact__data}>{name}</p>
-                        </div>
-                        <div className={css.contact__div}>
-                            <p className={css.contact__data}>{number}</p>
-                        </div>
-                    </div>
-                    <button type="button" className={css.deleteBtn} onClick={() => onDeleteContact(id)}>
+                <ListItem key={id}>
+                    <InfoContainer>
+                        <InfoItemContainer>
+                            <Data>{name}</Data>
+                        </InfoItemContainer>
+                        <InfoItemContainer>
+                            <Data>{number}</Data>
+                        </InfoItemContainer>
+                    </InfoContainer>
+                    <DeleteBtn type="button" onClick={() => onDeleteContact(id)}>
                         Delete contact
-                    </button>
-                </li>
+                    </DeleteBtn>
+                </ListItem>
             ))}
         </>
     );

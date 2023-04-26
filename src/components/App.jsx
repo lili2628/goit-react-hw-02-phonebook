@@ -3,9 +3,9 @@ import ContactForm from './ContactForm';
 import Filter from './Filter';
 import ContactList from './ContactList';
 import ContactItem from "./ContactItem";
-import css from './App.module.css';
 import initialContacts from '../data/contacts.json';
-import {nanoid} from 'nanoid';
+import { nanoid } from 'nanoid';
+import { Container, Title, SubTitle, ContactContainer } from './App.styled';
 
 class App extends Component { 
 
@@ -56,17 +56,17 @@ class App extends Component {
     const visibleContacts = this.getVisibleContacts();
 
     return (
-      <div className={css.container}>
-        <h1 className={css.title}>Phonebook</h1>
+      <Container>
+        <Title>Phonebook</Title>
         <ContactForm onSubmit={this.addContact} />
-        <div className={css.contacts}>
-          <h2 className={css.title__contacts}>Contacts ({contacts.length})</h2>
+        <ContactContainer>
+          <SubTitle>Contacts ({contacts.length})</SubTitle>
           <Filter value={filter} onChangeFilter={this.changeFilter} />
           <ContactList>
             <ContactItem contacts={visibleContacts} onDeleteContact={this.deleteContact} />
           </ContactList>
-        </div>
-      </div>
+        </ContactContainer>
+      </Container>
     );
   }
 }

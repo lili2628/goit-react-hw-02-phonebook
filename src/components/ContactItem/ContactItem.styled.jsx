@@ -1,24 +1,25 @@
-.contact__item {
+import styled from '@emotion/styled';
+
+export const ListItem = styled.li`
 display: flex;
 justify-content: space-between;
-}
 
-.contact__item:not(:last-child) {
-    margin-bottom: 10px;
+&:not(:last-child) {
+     margin-bottom: 10px;
 }
+`;
 
-.contact__info {
+export const InfoContainer = styled.div`
 display: flex;
 margin: 0;
+`;
 
-}
-
-.contact__div{
+export const InfoItemContainer = styled.div`
     width: 150px;
     position: relative;
-}
+`;
 
-.contact__data {
+export const Data = styled.p`
     display: block;
     margin: 0;
     position: absolute;
@@ -28,11 +29,9 @@ margin: 0;
     align-items: str;
 
     width: 100%;
-}
+`;
 
-
-
-.deleteBtn {
+export const DeleteBtn = styled.button`
     font-family: inherit;
     font-size: 100%;
 
@@ -49,18 +48,17 @@ margin: 0;
     box-shadow: inset 0px 20px 20px #ffffff;
     border-radius: 8px;
 
-}
+    &:hover {
+        box-shadow: inset 0px -20px 20px #ffffff;
+    }
 
-.deleteBtn:hover {
-    box-shadow: inset 0px -20px 20px #ffffff;
-}
+    &:focus {
+        outline: none;
+    }
 
-.deleteBtn:active {
-    margin-top: 1px;
-    margin-bottom: -1px;
-    zoom: 1;
-}
-
-.deleteBtn:focus {
-    outline: none;
-}
+    &:active {
+        margin-top: 1px;
+        margin-bottom: -1px;
+        zoom: 1;
+    }
+`;
