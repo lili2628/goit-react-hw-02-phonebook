@@ -1,1 +1,1 @@
-export { default } from './ContactFotm';
+export { default } from './ContactForm';

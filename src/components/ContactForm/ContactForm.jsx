@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {nanoid} from 'nanoid';
 import css from './ContactForm.module.css';
 import PropTypes from 'prop-types';
 
@@ -12,7 +11,6 @@ class ContactForm extends Component {
 
   onChangeInput = (e) => {
     const { name, value } = e.currentTarget;
-    const idContact = nanoid();
 
     this.setState({
       [name]: value,
